@@ -1,0 +1,18 @@
+trading-agent/
+│
+├── agents/
+│   ├── risk_agent.py
+│   └── critic_agent.py
+│
+├── orchestrator/
+│   └── orchestrator.py
+│
+
+│
+├── dashboard/
+│   └── streamlit_app.py
+│
+└── main.py
+
+
+
