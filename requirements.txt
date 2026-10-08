@@ -19,5 +19,5 @@ typing-extensions
 
 feedparser
 pandas
-
+fastapi
 streamlit
