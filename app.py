@@ -73,11 +73,12 @@ with st.sidebar:
         help="Choose whether Streamlit communicates with the FastAPI backend over HTTP or runs agents in-process."
     )
 
-    api_url = "http://localhost:8000"
+    default_backend = os.environ.get("BACKEND_URL", "http://localhost:8000")
+    api_url = default_backend
     if execution_mode.startswith("FastAPI"):
-        api_url = st.text_input("FastAPI Base URL", value="http://localhost:8000")
+        api_url = st.text_input("FastAPI Base URL", value=default_backend)
         try:
-            health_res = requests.get(f"{api_url}/health", timeout=1.5)
+            health_res = requests.get(f"{api_url}/health", timeout=2.5)
             if health_res.status_code == 200:
                 st.success("🟢 FastAPI Backend Online")
             else:

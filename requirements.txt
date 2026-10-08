@@ -10,14 +10,13 @@ requests
 python-dotenv
 
 ccxt
-
 ta
 
 pydantic
 typing-extensions
 
-
 feedparser
-pandas
 fastapi
+uvicorn[standard]
 streamlit
+plotly
